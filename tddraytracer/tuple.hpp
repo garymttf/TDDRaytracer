@@ -42,11 +42,13 @@ public:
     void setX(float x)  {  mTuple.x = x; }
     void setY(float y)  {  mTuple.y = y; }
     void setZ(float z)  {  mTuple.z = z; }
+    void setW(float w)  {  mTuple.w = w; }
     
     //operators
     bool operator==(const FBaseData& other) const;
-    friend  FBaseData operator+(const FBaseData& f1, const FBaseData& f2);
-    friend  FBaseData operator-(const FBaseData& f1, const FBaseData& f2);
+    friend FBaseData operator+(const FBaseData& f1, const FBaseData& f2);
+    friend FBaseData operator-(const FBaseData& f1, const FBaseData& f2);
+    friend FBaseData operator*(const FBaseData& f1, const float scalar);
     //negation
     void negate();
     
@@ -56,6 +58,7 @@ protected:
 
 FBaseData vector(float x, float y, float z);
 FBaseData point(float x, float y, float z);
+FBaseData color(float r, float g, float b, float a);
 
 
 #endif /* tuple_hpp */

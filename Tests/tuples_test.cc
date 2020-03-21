@@ -16,8 +16,8 @@ TEST(TupleTest, Vector) {
 }
 
 TEST(TupleTest, Equality){
-    FBaseData T1(Tuple<float>{1.0, 2.0, 3.0, 1.0});
-    FBaseData T2(Tuple<float>{1.0, 2.0, 3.0, 1.0});
+    FBaseData T1(Tuple<float>{1.0, 2.0, 3.0, 1});
+    FBaseData T2(Tuple<float>{1.0, 2.0, 3.0, 1});
     ASSERT_TRUE(T1==T2);
 }
 
@@ -69,6 +69,12 @@ TEST(Operations, Negation){
     FBaseData ExpectedResult = vector(-1,2,-3);
     ASSERT_TRUE(V == ExpectedResult);
     
+}
+
+TEST(Operations, ScalarMult){
+    FBaseData A = color(1, -2, 3, -4);
+    ASSERT_TRUE(A*3.5 == color(3.5, -7, 10.5, -14));
+    ASSERT_TRUE(A*3.5 == color(3.5, -7, 10.5, -14));
 }
 
 
